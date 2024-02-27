@@ -20,6 +20,7 @@ spec:
           rollbackLimit: 3
           forProvider:
             namespace: karpenter
+            # RENOVATE-HELPER: packageName=public.ecr.aws/karpenter/karpenter
             chart:
               name: karpenter
               repository: oci://public.ecr.aws/karpenter
