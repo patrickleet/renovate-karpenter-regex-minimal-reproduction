@@ -1,0 +1,15 @@
+{
+  "extends": ["config:recommended", ":dependencyDashboard"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "\\.yaml$"
+      ],
+      "matchStrings": [
+        "\\s*chart:\\s*name:\\s+(?<depName>.*?)\\s*repository:\\s*(?<registryUrl>.*?)\\s*version:\\s*(?<currentValue>.*?)\\s"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}

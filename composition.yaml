@@ -1,0 +1,29 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: karpenter
+  labels:
+    channel: stable
+spec:
+  compositeTypeRef:
+    apiVersion: xdp.ghx.com/v1alpha1
+    kind: XKarpenter
+  writeConnectionSecretsToNamespace: crossplane-system
+  resources:
+
+    # # Ref: https://github.com/aws/karpenter/blob/main/charts/karpenter/values.yaml
+    - name: karpenter
+      base:
+        apiVersion: helm.crossplane.io/v1beta1
+        kind: Release
+        spec:
+          rollbackLimit: 3
+          forProvider:
+            namespace: karpenter
+            chart:
+              name: karpenter
+              repository: oci://public.ecr.aws/karpenter
+              version: v0.29.2
+            values:
+              nameOverride: karpenter
+              fullnameOverride: karpenter
