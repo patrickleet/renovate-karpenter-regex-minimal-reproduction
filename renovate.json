@@ -7,7 +7,7 @@
         "\\.yaml$"
       ],
       "matchStrings": [
-        "RENOVATE-HELPER:\\s*packageName=(?<packageName>.*?)\\s*chart:\\s*name:\\s*.*\\s*repository:\\s*.*\\s*version:\\s*(?<currentValue>.*?)\\s"
+        "RENOVATE-HELPER:\\s*packageName=(?<packageName>.*?)\\s*chart:\\s*name:\\s*(?<depName>.*?)\\s*repository:\\s*.*\\s*version:\\s*(?<currentValue>.*?)\\s"
       ],
       "datasourceTemplate": "docker"
     }
