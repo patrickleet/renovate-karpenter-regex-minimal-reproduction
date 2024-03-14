@@ -24,7 +24,7 @@ spec:
             chart:
               name: karpenter
               repository: oci://public.ecr.aws/karpenter
-              version: v0.29.2
+              version: 0.35.2
             values:
               nameOverride: karpenter
               fullnameOverride: karpenter
